@@ -56,7 +56,10 @@
                 <li class="nav-item">
                     {% comment %} <a href="{% url 'empruts_index' %}">{% endcomment %}
                         <a >
-                        <i class="fa fa-shopping-cart"></i>
+                        {% comment %}<i class="fa fa-shopping-cart"></i>{% endcomment %}
+                        <div class="avatar-sm float-left mr-2">
+                            <img src="{% static 'app/assets/img/historique.ico' %}" alt="..." class="avatar-img rounded-circle">
+                        </div>
                         <p>Historique</p>
                     </a>
                     
@@ -64,15 +67,22 @@
                <li class="nav-item">
                     {% comment %} <a href="{% url 'empruts_index' %}">{% endcomment %}
                         <a >
-                        <i class="fa fa-shopping-cart"></i>
-                        <p>empruts</p>
+                        {% comment %}<i class="fa fa-shopping-cart"></i>{% endcomment %}
+                        
+                        <div class="avatar-sm float-left mr-2">
+                            <img src="{% static 'app/assets/img/emprunts.ico' %}" alt="..." class="avatar-img rounded-circle">
+                        </div>
+                        <p>emprunts</p>
                     </a>
                     
                 </li>
                 <li class="nav-item">
                    {% comment %}  <a  href="{% url 'Lecteurs_index' %}">{% endcomment %}
                     <a>
-                        <i class="fa fa-user-circle"></i>
+                        {% comment %}<i class="fa fa-user-circle"></i>{% endcomment %}
+                        <div class="avatar-sm float-left mr-2">
+                            <img src="{% static 'app/assets/img/lecteur.ico' %}" alt="..." class="avatar-img rounded-circle">
+                        </div>
                         <p>Lecteurs</p>
                     </a>
                     {% comment %} <div class="collapse" id="forms">
@@ -88,7 +98,10 @@
                 </li>
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#tables">
-                        <i class="fas fa-table"></i>
+                        {% comment %}<i class="fas fa-table"></i>{% endcomment %}
+                        <div class="avatar-sm float-left mr-2">
+                            <img src="{% static 'app/assets/img/livre.ico' %}" alt="..." class="avatar-img rounded-circle">
+                        </div>
                         <p>Livre</p>
                         <span class="caret"></span>
                     </a>
