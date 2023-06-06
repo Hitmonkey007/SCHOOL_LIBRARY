@@ -1,0 +1,148 @@
+{% load static %}
+<div class="sidebar">
+			
+    <div class="sidebar-background"></div>
+    <div class="sidebar-wrapper scrollbar-inner">
+        <div class="sidebar-content">
+            <div class="user">
+                <div class="avatar-sm float-left mr-2">
+                    <img src="{% static 'app/assets/img/Nesta.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                </div>
+                <div class="info">
+                    <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                        <span>
+                            Nestor
+                            <span class="user-level">Administrator</span>
+                            <span class="caret"></span>
+                        </span>
+                    </a>
+                    <div class="clearfix"></div>
+
+                    <div class="collapse in" id="collapseExample">
+                        <ul class="nav">
+                            <li>
+                                <a href="#profile">
+                                    <span class="link-collapse">My Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#edit">
+                                    <span class="link-collapse">Edit Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#settings">
+                                    <span class="link-collapse">Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav">
+                <li class="nav-item active">
+                    <a href="{% url 'home' %}">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>
+                        <span class="badge badge-count">5</span>
+                    </a>
+                </li>
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">Components</h4>
+                </li>
+                <li class="nav-item">
+                    {% comment %} <a href="{% url 'empruts_index' %}">{% endcomment %}
+                        <a >
+                        <i class="fa fa-shopping-cart"></i>
+                        <p>Historique</p>
+                    </a>
+                    
+                </li>
+               <li class="nav-item">
+                    {% comment %} <a href="{% url 'empruts_index' %}">{% endcomment %}
+                        <a >
+                        <i class="fa fa-shopping-cart"></i>
+                        <p>empruts</p>
+                    </a>
+                    
+                </li>
+                <li class="nav-item">
+                   {% comment %}  <a  href="{% url 'Lecteurs_index' %}">{% endcomment %}
+                    <a>
+                        <i class="fa fa-user-circle"></i>
+                        <p>Lecteurs</p>
+                    </a>
+                    {% comment %} <div class="collapse" id="forms">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="forms/forms.html">
+                                    <span class="sub-item">Basic Form</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div> {% endcomment %}
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="collapse" href="#tables">
+                        <i class="fas fa-table"></i>
+                        <p>Livre</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="tables">
+                        <ul class="nav nav-collapse">
+                            <li>
+                               {% comment %} <a href="{% url 'products_indexe' %}">{% endcomment %}
+                                <a>
+                                    <span class="sub-item">Tous les livres</span>
+                                </a>
+                            </li>
+                            <li>
+                                {% comment %}<a href="{% url 'categories_index' %}">{% endcomment %}
+                                    <a>
+                                    <span class="sub-item">Categorie des livres</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                {% comment %}<li class="nav-item">
+                    <a data-toggle="collapse" href="#maps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Acces rights</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="maps">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="maps/googlemaps.html">
+                                    <span class="sub-item">Role</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="maps/fullscreenmaps.html">
+                                    <span class="sub-item">User</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a  href="#charts">
+                        <i class="fa fa-power-off"></i>
+                        <p>Logaout</p>
+                        <span class="caret"></span>
+                    </a>
+                    
+                </li>{% endcomment %}
+                
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
