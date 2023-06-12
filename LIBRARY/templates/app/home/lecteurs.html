@@ -1,0 +1,42 @@
+{% extends 'app/layouts/default.html' %}
+{% block content %}   
+    
+    <br>
+    <br>
+    <h3 class="p-3 mb-2 bg-success text-white" style = 'font-size: 30px;text-align:center;'>Liste des lecteurs</h3>
+{% if lecteurs%}
+<div class="container">
+  <table class="table table-hover table-condensed table-striped table-bordered">
+    <thead>
+    <tr>
+    <th>Nom_lecteur</th>
+    <th>Prenom_lecteur</th>
+    <th>Adresse</th>
+    <th>Telefone</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+    <td colspan="4" rowspan="4">
+    <div class="links"></div>
+    </td>
+    </tr>
+    </tfoot>
+    <tbody>
+      {% for lecteur in lecteurs %}
+        <tr>
+          <td>{{lecteur.nom}}</td>
+          <td>{{lecteur.prenom}}</td>
+          <td>{{lecteur.Adresse}}</td>
+          <td>{{lecteur.telephone}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    </table>
+</div>
+{%else%}
+<h1>il n'y a pas de lecteurs </h1>
+{%endif%}
+
+
+{% endblock  %}
