@@ -7,4 +7,5 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
     path('', home.index, name='home'),
     path('contact', home.contact, name='contact'),
+    path('emprunts/', emprunts.index, name='emprunt_index'),
 ]
