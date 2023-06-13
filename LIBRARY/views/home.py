@@ -14,4 +14,3 @@ def contact(request):
         request,
         'app/home/contact.html'
     )
-
