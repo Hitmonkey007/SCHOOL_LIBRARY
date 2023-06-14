@@ -54,12 +54,16 @@
                     <h4 class="text-section">School library</h4>
                 </li>
                 <li class="nav-item">
+                    <a href="{% url 'emprunt_index' %}">
+                        {% comment %} <i class="fa fa-shopping-cart"></i> {% endcomment %}
                     {% comment %} <a href="{% url 'empruts_index' %}">{% endcomment %}
-                        <a >
-                        {% comment %}<i class="fa fa-shopping-cart"></i>{% endcomment %}
-                        <div class="avatar-sm float-left mr-2">
+                        {% comment %} <a > {% endcomment %}
+                        {% comment %} <i class="fa fa-shopping-cart"></i> {% endcomment %}
+                        {% comment %} <div class="avatar-sm float-left mr-2"> {% endcomment %}
+                            <i>
                             <img src="{% static 'app/assets/img/historique.ico' %}" alt="..." class="avatar-img rounded-circle">
-                        </div>
+                            </i>
+                        {% comment %} </div> {% endcomment %}
                         <p>Historique</p>
                     </a>
                     
@@ -77,10 +81,9 @@
                     
                 </li>
 
-
                 <li class="nav-item">
                     {% comment %}  <a  href="{% url 'Lecteurs_index' %}">{% endcomment %}
-                    <a>
+                    <a data-toggle="collapse" href="#maps">
                          {% comment %}<i class="fa fa-user-circle"></i>{% endcomment %}
                         <div class="avatar-sm float-left mr-2">
                              <img src="{% static 'app/assets/img/lecteur.ico' %}" alt="..." class="avatar-img rounded-circle">
@@ -113,8 +116,9 @@
                             </li>
                             
                         </ul>
-                    </div> {% endcomment %}
-                </li>
+                    </div> 
+                </li>{% endcomment %}
+                
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#tables">
                         {% comment %}<i class="fas fa-table"></i>{% endcomment %}
@@ -134,15 +138,15 @@
                             </li>
                             <li>
                                 {% comment %}<a href="{% url 'categories_index' %}">{% endcomment %}
-                                    <a>
+                                <a>
                                     <span class="sub-item">Tous les livres</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                {% comment %}
-                <li class="nav-item">
+               
+                {% comment %} <li class="nav-item"> 
                     <a data-toggle="collapse" href="#maps">
                         <i class="fas fa-map-marker-alt"></i>
                         <p>Acces rights</p>
@@ -172,8 +176,8 @@
                     </a>
                     
                 </li>
-              {% endcomment %}
-                
+             
+                {% endcomment %}
                 
             </ul>
         </div>

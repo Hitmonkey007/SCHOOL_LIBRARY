@@ -8,5 +8,6 @@ urlpatterns = [
     path('', home.index, name='home'),
     path('contact', home.contact, name='contact'),
     path('ajout_lecteur', lecteure.ajout_lecteur, name='ajout_lecteur'),
-    path('lecteurs', lecteure.lecteurs, name='lecteurs')
+    path('lecteurs', lecteure.lecteurs, name='lecteurs'),
+    path('emprunts/', emprunts.index, name='emprunt_index'),
 ]
