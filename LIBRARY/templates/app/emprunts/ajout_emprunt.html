@@ -32,7 +32,7 @@
                 <form action="#" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                        {{ form.lecteur|as_crispy_field }}
+                        {% comment %} {{ form.Lecteur|as_crispy_field }} {% endcomment %}
                         <div class="form-group">
                             <label for="lecteur">Select lecteur</label>
                             <select name="lecteur" id="Lecteur_id" class="form-control">
@@ -44,15 +44,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="livre">Select livres</label>
-                            <select name="livre" id="livre_id" class="form-control">
+                            <label for="Lecteur">Select lecteur</label>
+                            <select name="Lecteur" id="Lecteur_id" class="form-control">
                                 <option value="">---------</option>
                                 
                             </select>
                         </div>
-                        {{ form.product|as_crispy_field }}
-                        {{ form.quantite|as_crispy_field }}
-                        {{ form.total|as_crispy_field }}
+                        {% comment %} {{ form.Lecteur.nom|as_crispy_field }} {% endcomment %}
+                        {% comment %} {{ form.Lecteur.prenom|as_crispy_field }} {% endcomment %}
+                       
                     </div>
                     <button type="submit" class="btn btn-primary">Enregister</button>
                 </form>

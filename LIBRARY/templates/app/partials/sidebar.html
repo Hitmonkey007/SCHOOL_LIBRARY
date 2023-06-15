@@ -69,13 +69,16 @@
                     
                 </li>
                <li class="nav-item">
+                <a href="{% url 'emprunts_ajout' %}">
                     {% comment %} <a href="{% url 'empruts_index' %}">{% endcomment %}
-                        <a >
+                        {% comment %} <a > {% endcomment %}
                         {% comment %}<i class="fa fa-shopping-cart"></i>{% endcomment %}
                         
-                        <div class="avatar-sm float-left mr-2">
+                        {% comment %} <div class="avatar-sm float-left mr-2"> {% endcomment %}
+                        <i>
                             <img src="{% static 'app/assets/img/emprunts.ico' %}" alt="..." class="avatar-img rounded-circle">
-                        </div>
+                        </i>
+                            {% comment %} </div> {% endcomment %}
                         <p>emprunts</p>
                     </a>
                     
