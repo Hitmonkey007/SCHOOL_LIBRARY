@@ -12,5 +12,6 @@ urlpatterns = [
     path('ajout_lecteur', lecteure.ajout_lecteur, name='ajout_lecteur'),
     path('lecteurs', lecteure.lecteurs, name='lecteurs'),
     path('emprunts/index', emprunts.index, name='emprunt_index'),
-    path('emprunts/ajout_emprunt',emprunts.ajout_emprunt, name='emprunts_ajout')
+    path('emprunts/ajout_emprunt',emprunts.ajout_emprunt, name='emprunts_ajout'),
+    path('signout', views.signout, name='signout'),
 ]
