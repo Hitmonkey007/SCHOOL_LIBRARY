@@ -7,12 +7,7 @@ from django.http import HttpResponseRedirect
 
 
 #Views..
-def index(request):
-    return render(
-        request,
-        'app/home/index.html'
-    )
-    
+
 def signup(request):
     if request.method == "POST":
     
@@ -49,6 +44,17 @@ def signin(request):
     
      return render(request, 'app/home/signin.html')
  
+
+
+
+
+def index(request):
+    return render(
+        request,
+        'app/home/index.html'
+    )
+    
+
  
 
 def contact(request):
