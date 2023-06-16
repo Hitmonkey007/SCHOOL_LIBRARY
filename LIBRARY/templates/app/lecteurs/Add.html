@@ -1,29 +1,14 @@
-{% extends 'app/layouts/default.html' %}
-{% block content %}
-{% load crispy_forms_tags %}
 
-<div class="main-panel"style="background:#c7c8ca;">
-    <div class="content">
-        <div class="page-inner">
-            <div class="page-header">
-                <h4 class="page-title">Ajouter un emprunt</h4>
-                <div class="btn-group btn-group-page-header ml-auto">
-                    <button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-ellipsis-h"></i>
-                    </button>
-                    <div class="dropdown-menu">
-                        <div class="arrow"></div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </div>
-            </div>
-            
+ {% extends 'app/layouts/default.html' %}
+ {% block content %}  
+ {% load crispy_forms_tags %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-    			 <center><h2>Ajouter un lecteur</h2></center>
+    			<center><h2>Ajouter un lecteur</h2></center>
 
           <div class="container-fluid" style="background:white; ">
             <form action="#" method="POST">
@@ -60,7 +45,7 @@
                   {{ form.telephone|as_crispy_field }}
                   <div class="form-group">
                     <label for="telephone">Saisir le numero </label>
-                    <input type="numero" name="telephone" id="" class="form-control" placeholder="Numero" aria-describedby="helpId">
+                    <input type="numero" name="telephone" id="" class="form-control" placeholder="Nu" aria-describedby="helpId">
                   </div> 
                 </div>        
             <button type="submit" class="btn btn-success btn-lg" style="border-radius: 0%;">Ajouter</button>

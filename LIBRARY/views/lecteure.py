@@ -6,11 +6,23 @@ from LIBRARY.models import Lecteur
 from LIBRARY.Forms import LecteurForm
 
 def add(request):
-    return render(
-        request,
-        'app/lecteurs/Add.html'
-    )    
+  if request.method == "POST":
+       lecteurForm = LecteurForm(request.POST)
 
+       if lecteurForm.is_valid():
+          form = lecteurForm.save(commit=False)
+          form.save()
+          return redirect('home')
+       else:
+       # this should be include if form validate failed
+          return render(request, 'app/lecteurs/Add.html', {'lecteurForm': LecteurForm})
+
+  elif request.method == "GET":
+       lecteurForm = LecteurForm()
+       context = {'lecteurForm': LecteurForm}
+       # return render(request, 'index.html', context) <-- why do you have this here?
+       return render(request, 'app/lecteurs/Add.html', context)
+       
 def index(request):
      assert isinstance(request, HttpRequest)
      orders = Lecteur.objects.all()
