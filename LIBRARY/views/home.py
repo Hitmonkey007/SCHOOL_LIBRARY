@@ -52,3 +52,9 @@ def contact(request):
         'app/home/contact.html'
     )
 
+def signout(request):
+   logout(request)
+   messages.success(request, 'Logged out successfully😉')
+   return redirect('index')
+    
+
