@@ -1,75 +1,91 @@
 {% extends 'app/layouts/default.html' %}
-{% block content %}   
-<div class="main-panel"style="background:#c7c8ca;">
-  <div class="content">
-      <div class="page-inner">
-          <div class="page-header">
-              <h4 class="page-title">Lecteurs</h4>
-              <div class="btn-group btn-group-page-header ml-auto">
-                  <button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fa fa-ellipsis-h"></i>
-                  </button>
-                  <div class="dropdown-menu">
-                      <div class="arrow"></div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
-                  </div>
-              </div>
-          </div>
-          
-          <div class="row">
-              <div class="col-lg-12">
-                  <h1 class="page-header"> Liste des lecteurs</h1>
-              </div>
-          </div>
-          <div class="container-fluid" >
-            <a href="{% url 'emprunt_index' %}" class="btn btn-primary">Nouveau</a>
-            <br>
-            <br>
-            <div class="table-responsive" style="background:white; ">
-              <table class="table table-bordered table-stripped">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Nom_lecteur</th>
-                    <th>Prenom_lecteur</th>
-                    <th>Adresse</th>
-                    <th>Telefone</th>
-                    <th>Option</th>
-                  </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <td colspan="4" rowspan="4">
-                   <div class="links"></div>
-                  </td>
-               </tr>
-             </tfoot>
-             <tbody>
-               {% for lecteur in Lecteurs %}
-                 <tr>
-                   <td>{{lecteur.id}}</td>
-                   <td>{{lecteur.nom}}</td>
-                   <td>{{lecteur.prenom}}</td>
-                   <td>{{lecteur.Adresse}}</td>
-                   <td>{{lecteur.telephone}}</td>
-                 </tr>
-                      <div class="card-footer">
-                        <a href="{% url 'lecteur_edit' lecteur.id %}" class= "btn btn-secondary">Modifier</a>
-                        <form action= "{% url 'lecteur_delete' lecteur.id %}" method ="POST">
-                        {% csrf_token %}
-                          <button type= "submit" onclick ="return confirm('Vous voulez supprimer')"
-                            class="btn btn-danger btn-sm">Supprimer</button>
-                        </form> 
-                      </div>       
+{% block content %}
 
-                {% endfor %}
-             </tbody>
-             </table>
+<div class="main-panel"style="background:#c7c8ca;">
+    <div class="content">
+        <div class="page-inner">
+            <div class="page-header">
+                <h4 class="page-title">Lecteurs</h4>
+                <div class="btn-group btn-group-page-header ml-auto">
+                    <button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="arrow"></div>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </div>
             </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header"> Liste des lecteurs</h1>
+                </div>
+            </div>            
+            {% if messages %}
+            {% for message in messages %}
+            <p class="alert alert-success w-100 h-100">{{message}}</p>
+            {%endfor %}
+            {% endif %}
+
+            <div class="container-fluid" >
+                <a href="{% url 'lecteur_add' %}" class="btn btn-primary">Nouveau</a>
+                <br>
+                <br>
+                <div class="table-responsive" style="background:white; ">
+                    <table class="table table-bordered table-stripped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nom de lecteur</th>
+                                <th>Prenom de lecteur</th>
+                                <th> Adresse du lecteur </th>
+                                <th>Sexe</th>
+                                <th> Telephone </th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          {% for Lecteur in Lecteurs%}
+                          <tr>
+                            <td>{{ Lecteur.id }}</td>
+                            <td>{{ Lecteur.nom }}</td>
+                            <td>{{ Lecteur.prenom }}</td>
+                            <td>{{ Lecteur.Adresse }}</td>
+                            <td>{{ Lecteur.categorie}}</td>
+                            <td>{{ Lecteur.telephone}}</td>
+                            <td>
+                                    <div class="card-footer">
+                                        <a href="{% url 'lecteur_edit' Lecteur.id %}" class="btn btn-primary">Modifier</a>
+                                        <form action="{% url 'lecteur_update' Lecteur.id %}" method="post">
+                                            {% csrf_token %}
+                                            <button type="submit" onclick="return confirm('etes vous pret a supprimer le lecteur')"
+                                                class="btn btn-danger btn-sm">supprimer</button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+               
+            
+           
+           
+            
+            
+        </div>
+    </div>
+    
+</div>
+
 
 
 {% endblock  %}
