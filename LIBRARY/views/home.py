@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpRequest
+from django.http import HttpResponse
 
 
 def index(request):
@@ -9,10 +10,10 @@ def index(request):
     )
  
 def signup(request):
-    pass   
+    return render(request, 'signup.html')
 
 def signin(request):
-    pass
+    return render( request, 'signin.html')
     
 def contact(request):
     return render(
