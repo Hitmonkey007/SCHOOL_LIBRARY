@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>LISTE LIVRES</title>
+        <style>
+            body{background: #eee;height: 100%;margin: 25px 0;padding-left: 300px;}
+            
+            table,th,td{border: 1px solid rgb(118,200,221);}
+            
+            tr:hover{background-color: yellow;}
+            
+            th{background-color: #04AA6D;color: white;}
+            
+            button{border-radius: 12px;color:aqua;background-color: #04AA6D;cursor: pointer;}
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categorie</th>
+                    <th>ID livre</th>
+                    <th>Id auteur</th>
+                    <th>Titre</th>
+                    <th>Exemplaires</th>
+                    <th>Annee publication</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for livre in livres %}
+                <tr>
+                    <td>{{livre.categorie}}</td>
+                    <td>{{livre.id_livre}}</td>
+                    <td>{{livre.id_auteur}}</td>
+                    <td>{{livre.titre}}</td>
+                    <td>{{livre.exemplaire}}</td>
+                    <td>{{livrviewse.annee_publication}}</td>
+                    <td>
+                        <button><a href="/edit/{{employee.id}}">Modifier</a></button>
+                        <button><a href="/delete/{{employee.id}}">Supprimer</a></button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <button><a style="color: blue;text-decoration:none" href="/emp">Add new record</a></button>
+    </body>
+</html>
