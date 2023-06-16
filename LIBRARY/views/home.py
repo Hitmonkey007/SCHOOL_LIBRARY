@@ -1,5 +1,8 @@
-from django.shortcuts import render
 from django.http import HttpRequest
+from django.shortcuts import render
+
+#Views..
+
 
 
 def index(request):
@@ -7,10 +10,13 @@ def index(request):
         request,
         'app/home/index.html'
     )
-    
-    
+
 def contact(request):
     return render(
         request,
         'app/home/contact.html'
     )
+
+
+    
+
