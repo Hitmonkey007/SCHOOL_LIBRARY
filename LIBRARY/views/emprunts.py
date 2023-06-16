@@ -9,7 +9,7 @@ from LIBRARY.Forms import EmpruntForm
 
 def index(request):
     assert isinstance(request, HttpRequest)
-    orders = Emprunt.objects.all()
+    emprunts = Emprunt.objects.all()
     return render(
         request,
         'app/emprunts/index.html',
@@ -17,3 +17,28 @@ def index(request):
             'emprunts': Emprunt
         }
     )
+def ajout_emprunt(request):
+    
+    assert isinstance(request, HttpRequest)
+    emprunts = Emprunt.objects.all()
+    form = EmpruntForm()
+    return render(
+        
+        request,
+        'app/emprunts/ajout_emprunt.html',
+        
+        {
+            
+            'form': form,
+            
+            'categories': emprunts
+            
+        }
+    )
+     
+            
+            
+        
+    
+        
+
