@@ -1,8 +1,10 @@
-from django.shortcuts import render
 from django.http import HttpRequest
-from django.http import HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth import authenticate,login,logout
 
-
+#Views..
 def index(request):
     return render(
         request,
@@ -10,10 +12,11 @@ def index(request):
     )
  
 def signup(request):
-    return render(request, 'signup.html')
+    
+    return render(request, 'app/home/signup.html')
 
 def signin(request):
-    return render( request, 'signin.html')
+    return render( request, 'app/home/signin.html')
     
 def contact(request):
     return render(
