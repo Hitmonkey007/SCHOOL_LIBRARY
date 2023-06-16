@@ -3,14 +3,10 @@ from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
+from django.http import HttpResponseRedirect
 
 #Views..
-def index(request):
-    return render(
-        request,
-        'app/home/index.html'
-    )
- 
+
 def signup(request):
     if request.method == "POST":
     
@@ -30,7 +26,7 @@ def signup(request):
     return render(request, 'app/home/signup.html')
 
 def signin(request):
-     if request.method == 'POST':
+    if request.method == 'POST':
         username = request.POST['username']
         pass1 = request.POST['pass1']
         
@@ -43,9 +39,16 @@ def signin(request):
         else:
           messages.error(request, 'Username or Password is incorrect!')
           return redirect('index')
-    
-     return render(request, 'app/home/signin.html')
-    
+     
+     
+    return render(request, "app/home/signin.html")
+
+def index(request):
+    return render(
+        request,
+        'app/home/index.html'
+    )
+
 def contact(request):
     return render(
         request,
