@@ -6,6 +6,7 @@ from LIBRARY.models import Lecteur
 from LIBRARY.Forms import LecteurForm
 
 def add(request):
+
   if request.method == "POST":
        lecteurForm = LecteurForm(request.POST)
 
@@ -25,7 +26,7 @@ def add(request):
        
 def index(request):
      assert isinstance(request, HttpRequest)
-     orders = Lecteur.objects.all()
+     lecteurForm = Lecteur.objects.all()
      return render(
         request,
         'app/lecteurs/index.html',
