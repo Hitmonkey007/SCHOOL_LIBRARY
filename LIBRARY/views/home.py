@@ -10,6 +10,9 @@ def index(request):
  
 def signup(request):
     pass   
+
+def signin(request):
+    pass
     
 def contact(request):
     return render(
