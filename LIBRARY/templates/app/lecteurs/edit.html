@@ -1,6 +1,5 @@
 {% extends 'app/layouts/default.html' %}
 {% block content %}
-{% load crispy_forms_tags %}
 
 <div class="main-panel"style="background:#c7c8ca;">
     <div class="content">
@@ -26,11 +25,11 @@
     <form action = "{% url 'lecteur_update' form.instance.pk %}" method='POST'>
         {%csrf_token%}
         <div class="form-group">
-            {{form.nom|as_crispy_field}}
-            {{form.prenom|as_crispy_field}}
-            {{form.Adress|as_crispy_field}}
-            {{form.categorie|as_crispy_field}}
-            {{form.telephone|as_crispy_field}}
+            {{form.nom}}
+            {{form.prenom}}
+            {{form.Adress}}
+            {{form.categorie}}
+            {{form.telephone}}
         </div>
         <button type="submit" class= "btn btn-primary">Modifier</button>    
     </form>    
@@ -38,9 +37,3 @@
 </div>
 
 {% endblock  %}
-
-<div class="form-group">
-  <label for=""></label>
-  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-  <small id="helpId" class="text-muted">Help text</small>
-</div>
