@@ -10,17 +10,17 @@ def add(request):
        lecteurForm = LecteurForm(request.POST)
 
        if lecteurForm.is_valid():
-          form = lecteurForm.save(commit=False)
-          form.save()
+          post = lecteurForm.save(commit=False)
+          post.save()
+          messages.success(request, "Le lecteur a ete enregistre avec succes")
           return redirect('home')
        else:
-       # this should be include if form validate failed
-          return render(request, 'app/lecteurs/Add.html', {'lecteurForm': LecteurForm})
+      
+          return render(request, 'app/lecteurs/add.html', {'lecteurForm': lecteurForm})
 
   elif request.method == "GET":
        lecteurForm = LecteurForm()
-       context = {'lecteurForm': LecteurForm}
-       # return render(request, 'index.html', context) <-- why do you have this here?
+       context = {'lecteurForm': lecteurForm}
        return render(request, 'app/lecteurs/Add.html', context)
        
 def index(request):
