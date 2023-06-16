@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'LIBRARY',
+    'crispy_forms',
+    'crispy_bootstrap4',
     
 ]
 
@@ -126,8 +128,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = [ 
+"""STATICFILES_DIRS = [ 
     BASE_DIR / "static",
     ]
 SIGNIN_REDIRECT_URL = '/'
-SIGIN_URL = '/signin'
+SIGIN_URL = '/signin'"""
