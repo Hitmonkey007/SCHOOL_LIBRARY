@@ -21,8 +21,6 @@ def signup(request):
         pass1 = request.POST['pass1']
         pass2 = request.POST['pass2']
         
-       
-
         myuser = User.objects.create_user(uname, email, pass1)
         myuser.save()
         messages.success(request, 'Your account has been successfully created')
@@ -32,10 +30,25 @@ def signup(request):
     return render(request, 'app/home/signup.html')
 
 def signin(request):
-    return render( request, 'app/home/signin.html')
+     if request.method == 'POST':
+        username = request.POST['username']
+        pass1 = request.POST['pass1']
+        
+        user = authenticate(request, username=username, password=pass1)
+        if user is not None:
+         login(request, user)
+         fname = user.first_name
+         return render(request, 'index.html', {'fname': fname})
+         
+        else:
+          messages.error(request, 'Username or Password is incorrect!')
+          return redirect('index')
+    
+     return render(request, 'app/home/signin.html')
     
 def contact(request):
     return render(
         request,
         'app/home/contact.html'
     )
+
