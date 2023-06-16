@@ -7,7 +7,9 @@ def index(request):
         request,
         'app/home/index.html'
     )
-    
+ 
+def signup(request):
+    pass   
     
 def contact(request):
     return render(
