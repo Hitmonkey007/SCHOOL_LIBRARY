@@ -32,6 +32,8 @@
             {%endfor %}
             {% endif %}
 
+
+            {% if lecteurForm %}
             <div class="container-fluid" >
                 <a href="{% url 'lecteur_add' %}" class="btn btn-primary">Nouveau</a>
                 <br>
@@ -50,18 +52,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                          {% for Lecteur in Lecteurs%}
+                          {% for lecteur in lecteurForm %}
                           <tr>
-                            <td>{{ Lecteur.id }}</td>
-                            <td>{{ Lecteur.nom }}</td>
-                            <td>{{ Lecteur.prenom }}</td>
-                            <td>{{ Lecteur.Adresse }}</td>
-                            <td>{{ Lecteur.categorie}}</td>
-                            <td>{{ Lecteur.telephone}}</td>
+                            <td>{{ lecteur.id }}</td>
+                            <td>{{ lecteur.nom }}</td>
+                            <td>{{ lecteur.prenom }}</td>
+                            <td>{{ lecteur.Adresse }}</td>
+                            <td>{{ lecteur.categorie}}</td>
+                            <td>{{ lecteur.telephone}}</td>
                             <td>
                                     <div class="card-footer">
-                                        <a href="{% url 'lecteur_edit' Lecteur.id %}" class="btn btn-primary">Modifier</a>
-                                        <form action="{% url 'lecteur_update' Lecteur.id %}" method="post">
+                                        <a href="#" class="btn btn-primary">Modifier</a>
+                                        <form action="#" method="POST">
                                             {% csrf_token %}
                                             <button type="submit" onclick="return confirm('etes vous pret a supprimer le lecteur')"
                                                 class="btn btn-danger btn-sm">supprimer</button>
@@ -75,7 +77,7 @@
                     </table>
                 </div>
             </div>
-               
+            {% endif %}  
             
            
            
