@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpRequest
 from django.contrib import messages
-
 from LIBRARY.models import Lecteur
 from LIBRARY.Forms import LecteurForm
 
@@ -11,8 +10,7 @@ def add(request):
        lecteurForm = LecteurForm(request.POST)
 
        if lecteurForm.is_valid():
-          post = lecteurForm.save(commit=False)
-          post.save()
+          post = lecteurForm.save()
           messages.success(request, "Le lecteur a ete enregistre avec succes")
           return redirect('home')
        else:
@@ -25,13 +23,12 @@ def add(request):
        return render(request, 'app/lecteurs/Add.html', context)
        
 def index(request):
-     assert isinstance(request, HttpRequest)
      lecteurForm = Lecteur.objects.all()
      return render(
         request,
         'app/lecteurs/index.html',
         {
-            'lecteurs': Lecteur
+            'lecteurForm': lecteurForm
         }
     )
 
@@ -46,7 +43,7 @@ def edit(request):
 def delete(request, id):
     lecteur= Lecteur.objects.get(pk=id)
     lecteur.delete()
-    return redirect('/lecteurs')
+    return redirect('/lecteurs/')
 
 def update(request, id):
     if request.method == 'POST':
@@ -57,4 +54,4 @@ def update(request, id):
             form = LecteurForm(request.POST,instance=lecteur)
         if form.is_valid() :
             form.save()
-    return redirect('/lecteurs')        
+    return redirect('lecteur_index')        

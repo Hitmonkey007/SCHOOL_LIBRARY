@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{background: #eee;height: 100%;margin: 25px 0;padding-left: 300px;}
+            
+            table,th,td{border: 1px solid rgb(118,200,221);}
+            
+            tr:hover{background-color: yellow;}
+            
+            th{background-color: #04AA6D;color: white;}
+            
+            button{border-radius: 12px;color:aqua;background-color: #04AA6D;cursor: pointer;}
+        </style>
+    </head>
+    <body>
+        <form method="POST" action="/update/{{livre.id}}">
+            {% csrf_token %}
+            <div>
+                <br>
+                <p>
+                    <h3>Modifier le livre</h3>
+                </p>
+            </div>
+            <div>
+                <p>Categorie</p>
+                <div>
+                    <input type="text" name="categorie" value="{{livre.categorie}}" />
+                </div>
+            </div>
+            <div>
+                <p>ID livre</p>
+                <div>
+                    <input type="text" name="id_livre" value="{{livre.id_livre}}" />
+                </div>
+            </div>
+            <div>
+                <p>Id auteur</p>
+                <div>
+                    <input type="text" name="id_auteur" value="{{livre.id_auteur}}" />
+                </div>
+            </div>
+            <div>
+                <p>Titre</p>
+                <div>
+                    <input type="text" name="titre" value="{{livre.titre}}" />
+                </div>
+            </div>
+            <div>
+                <p>Exemplaires</p>
+                <div>
+                    <input type="number" name="exemplaire" value="{{livre.exemplaire}}" />
+                </div>
+            </div>
+            <div>
+                <p>Annee publication</p>
+                <div>
+                    <input type="date" name="annee_publication" value="{{livre.annee_publication}}" />
+                </div>
+                <div>
+                    <br>
+                    <button type="submit">Confirme</button>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

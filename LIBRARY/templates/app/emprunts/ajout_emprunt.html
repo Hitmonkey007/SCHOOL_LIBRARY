@@ -1,6 +1,6 @@
 {% extends 'app/layouts/default.html' %}
 {% block content %}
-{% load crispy_forms_tags %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
 
 <div class="main-panel"style="background:#c7c8ca;">
     <div class="content">
@@ -11,7 +11,7 @@
                     <button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-ellipsis-h"></i>
                     </button>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu"> 
                         <div class="arrow"></div>
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
@@ -37,8 +37,8 @@
                             <label for="lecteur">Select lecteur</label>
                             <select name="lecteur" id="Lecteur_id" class="form-control">
                                 <option value="">---------</option>
-                                {% for lecteur in lecteur %}
-                                    <option value="{{ Lecteur.id }}">{{ lecteur.nom }}</option>
+                                {% for lecteur in home %}
+                                    <option value="{{ lecteur.nom }}">{{ lecteur.prenom }}</option>
                                 {% endfor %}
                             </select>
                         </div>
