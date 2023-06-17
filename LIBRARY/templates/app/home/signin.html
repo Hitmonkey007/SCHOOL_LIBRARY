@@ -9,6 +9,23 @@
         <link rel="stylesheet" href="">
     </head>
     <style>
+card-body{
+    width: 350px;
+
+    height: auto;
+   
+    position: absolute;
+   
+    left: 50%;
+   
+    top: 50%;
+   
+    transform: translate(-50%, -50%);
+   
+    -webkit-transform: translate(-50%, -50%);
+
+}
+
 body{
     display: flex;
     background-image:url("{% static 'app/assets/img/wallpaper.jpg' %}");
@@ -20,21 +37,32 @@ body{
     </style>
 <body>
     <div class="d-flex flex-column w-100 justify-content-center align-items-center">
-       <div class="form-box signin">
-        <h2>SignIn</h2>
-        <form action="/signin" method="post">
-            {% csrf_token %}
-            <div>
-            <label for="">Username</label>
-            <input type="username" id="username" name="username" placeholder="Enter username"Required>
-            </div>
-            <br>
-            <div>
-            <label for="">Password</label>
-            <input type="password" id="pass1" name="pass1" placeholder="Enter Password"Required>
-            </div>
-            <br>
-            <button type="submit">Sign In</button>
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 pt-3">
+            <div class="card card-default rounded-0 shadow">
+                <div class="card-header">
+                    <h4 class="card-title"><b>SignIN</b></h4>
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <form id="login-user" action="" method="POST">
+                            {% csrf_token %}
+                            <div class="mdc-layout-grid">
+                                <div class="mdc-layout-grid__inner">
+                                    <div class="form-group mb-3">
+                                        <label for="username" class="control-label">Username</label>
+                                        <input type="text" class="form-control rounded-0" autofocus name="username" id="username" required="required">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="password" class="control-label">Password</label>
+                                        <input type="password" class="form-control rounded-0" autofocus name="password" id="password" required="required">
+                                    </div>
+                                
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <div class="d-flex w-100 justify-content-center align-items-center">
+                                            <button class="btn btn-sm rounded-0 btn-primary">
+                                                Signin
+                                            </button>
             <a href="{% url 'signup' %}" >Create an account</a>
             
          </form>
