@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpRequest
 from django.contrib import messages
 from LIBRARY.models import Lecteur
-from LIBRARY.Forms import LecteurForm
+from LIBRARY.Forms import LecteurForm, lecteur_form
 
 def add(request):
 
@@ -32,9 +32,9 @@ def index(request):
         }
     )
 
-def edit(request):
+def edit(request,id):
     assert isinstance(request, HttpRequest)
-    orders = Lecteur.objects.all()
+    lecteur = Lecteur.objects.get(pk=id)
     return render(
         request,
         'app/lecteurs/edit.html'
@@ -46,12 +46,13 @@ def delete(request, id):
     return redirect('/lecteurs/')
 
 def update(request, id):
-    if request.method == 'POST':
-        if id == 0 :
-            form = LecteurForm(request.POST)
-        else :
-            lecteur = Lecteur.objects.get(pk=id) 
-            form = LecteurForm(request.POST,instance=lecteur)
-        if form.is_valid() :
-            form.save()
-    return redirect('lecteur_index')        
+   lecteur = Lecteur.objects.get(pk=id)
+   lecteurForm = LecteurForm(request.POST or None, instance= lecteur)
+   if lecteurForm.is_valid():
+      lecteurForm.save()
+      return redirect('lecteur_index')
+
+   return render  (
+       request,
+       'app/lecteurs/edit.html'
+       )   
