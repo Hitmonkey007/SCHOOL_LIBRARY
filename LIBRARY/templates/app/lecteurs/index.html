@@ -62,7 +62,6 @@
                             <td>{{ lecteur.telephone}}</td>
                             <td>
                                     <div class="card-footer">
-                                        <a href="{% url 'lecteur_edit ' lecteur.id %}" class="btn btn-primary">Modifier</a>
                                         <form action="{% url 'lecteur_delete' lecteur.id %}" method="POST">
                                             {% csrf_token %}
                                             <button type="submit" onclick="return confirm('etes vous pret a supprimer le lecteur')"
