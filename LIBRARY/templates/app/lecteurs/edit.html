@@ -22,14 +22,14 @@
             </div>
 
 <div class="container-fluid">
-    <form action = "{% url 'lecteur_update' form.instance.pk %}" method='POST'>
+    <form action = "{% url 'lecteur_update' lecteur.id %}" method='POST'>
         {%csrf_token%}
         <div class="form-group">
-            {{form.nom}}
-            {{form.prenom}}
-            {{form.Adress}}
-            {{form.categorie}}
-            {{form.telephone}}
+            {{lecteurForm.nom}}
+            {{lecteurForm.prenom}}
+            {{lecteurForm.Adress}}
+            {{lecteurForm.categorie}}
+            {{lecteurForm.telephone}}
         </div>
         <button type="submit" class= "btn btn-primary">Modifier</button>    
     </form>    
