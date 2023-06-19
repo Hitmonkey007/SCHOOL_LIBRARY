@@ -17,9 +17,9 @@ urlpatterns = [
     path('lecteur_updat/<id>', lecteure.update, name='lecteur_update'),
     path('emprunts/index', emprunts.index, name='emprunt_index'),
     path('emprunts/ajout_emprunt',emprunts.ajout_emprunt, name='emprunts_ajout'),
-    path('livre/ajouter_livre',livre.ajouter_livre, name='livre_ajout'),
+    path('emprunts/ajout_emprunt',emprunts.ajout_emprunt, name='emprunts_ajout'),
+    path('livre/ajouter_livre',livre.ajouter_livre, name='livre_ajout') ,
+
     
-    
-    
-    
+
 ]
