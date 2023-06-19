@@ -1,0 +1,74 @@
+ {%load static %}
+<html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <title>Signup form </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="">
+        <link rel="stylesheet" href="">
+    </head>
+    <style>
+body{
+    display: flex;
+    background-image:url("{% static 'app/assets/img/wallpaper.jpg' %}");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+    </style>
+<body>
+    <div class="d-flex flex-column w-100 justify-content-center align-items-center">
+        <div class="form-box signin">
+        <h2>SignUp</h2>
+        <form action="/signup" method="post">
+            {% csrf_token %}
+            <div>
+            <label for="">Username</label>
+            <input type="text" id="username" name="username" placeholder="Create Username"Required>
+            </div> 
+             <br>
+             <div>
+            <label for="">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter Your First Name"Required>
+             </div>
+            <br>
+            <div>
+            <label for="">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name"Required>
+            </div>
+            <br>
+            <div>
+            <label for="">Email</label>
+            <input type="Email" id="email" name="Email" placeholder="Enter Your Email"Required>
+            </div> 
+            <br>
+            <div>
+            <label for="">Password</label>
+            <input type="password" id="pass1" name="pass1" placeholder="Create Password"Required>
+            </div>
+            <br>
+            <div>
+            <label for="">Confirm Password</label>
+            <input type="password" id="pass2" name="pass2" placeholder="Confirm Password" Required>
+            </div>
+            <br>
+            <button type="submit">Sign Up</button>
+            
+            <a href="{% url 'signin' %}" >Already have an account?</a>
+         </form>
+       
+       </div>
+        
+            
+    
+    </div>
+
+    
+</body> 
+
+
+</html>
+   
+      

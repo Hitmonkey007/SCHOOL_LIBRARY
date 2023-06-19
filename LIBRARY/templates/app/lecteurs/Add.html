@@ -1,0 +1,59 @@
+
+ {% extends 'app/layouts/default.html' %}
+ {% block content %}   
+<div class="main-panel"style="background:#c7c8ca;">
+  <div class="content">
+      <div class="page-inner">
+          <div class="page-header">
+              <h4 class="page-title">Ajouter un lecteur</h4>
+              <div class="btn-group btn-group-page-header ml-auto">
+                  <button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa fa-ellipsis-h"></i>
+                  </button>
+                  <div class="dropdown-menu">
+                      <div class="arrow"></div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+              </div>
+          </div>
+
+
+          <div class="container-fluid" style="background:white; ">
+            <form class="lecteur_Form" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="nom">Saisir le nom </label>
+                    {{ lecteurForm.nom}}
+                    
+                </div>  
+                <div class="form-group">
+                  <label for="prenom">Saisir le prenom </label>
+                      {{ lecteurForm.prenom}}
+                </div>  
+                <div class="form-group">
+                  <label for="Adresse">Saisir l'Adresse </label>
+                  {{ lecteurForm.Adresse}}
+                </div>  
+                <div class="form-group">
+                  <label for="categorie">Homme ou femme </label>
+                  {{ lecteurForm.categorie}}
+                </div>
+                <div class="form-group">
+                  <label for="telephone">Saisir le numero </label>
+                  {{ lecteurForm.telephone}}
+                </div> 
+                <button type="submit" class="btn btn-success btn-lg" style="border-radius: 0%;">Ajouter</button>
+            </form>   
+    			</div>
+                       
+            
+    	<div class="text-center">Voir les lecteurs<a href="{% url 'lecteur_index' %}">Cliquer ici</a></div>
+    </div>
+
+ {% endblock  %}
+    
+  

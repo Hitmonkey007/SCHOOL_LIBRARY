@@ -17,7 +17,7 @@
 		
 		<!-- End Custom template -->
 	</div>
-</div>
+
 {% load static %}
 <!--   Core JS Files   -->
 <script src="{% static 'app/assets/js/core/jquery.3.2.1.min.js' %}"></script>
@@ -67,7 +67,7 @@
 
 <!-- Azzara DEMO methods, don't include it in your project! -->
 <script src="{% static 'app/assets/js/setting-demo.js' %}"></script>
-<script src="{% static 'app/assets/js/demo.js' %}"></script>
+{% comment %} <script src="{% static 'app/assets/js/demo.js' %}"></script> {% endcomment %}
 <script src="{% static 'app/assets/js/main.js' %}"></script>
 </body>
 </html>

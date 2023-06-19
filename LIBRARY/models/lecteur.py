@@ -1,6 +1,6 @@
 """pour les lecteurs"""
 
-from django.db import models
+from django.db import models 
 
 
 class Lecteur(models.Model):
@@ -12,7 +12,7 @@ class Lecteur(models.Model):
     prenom = models.CharField(max_length=40)
     Adresse = models.CharField(max_length=40)
     categorie=models.CharField(max_length=30,choices=catchoice,default='homme')
-    telephone=models.PositiveIntegerField()
+    telephone=models.CharField(max_length=10)
     #utiliser pour donner un livre
     def __str__(self):
         return str (self.nom)+'['+str(self.prenom)+']'
