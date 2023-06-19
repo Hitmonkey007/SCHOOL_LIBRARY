@@ -1,11 +1,11 @@
 {% extends 'app/layouts/default.html' %}
-{% block content %}   
+{% block content %}
 
 <div class="main-panel"style="background:#c7c8ca;">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Ajouter un livre</h4>
+                <h4 class="page-title">Ajouter un emprunt</h4>
                 <div class="btn-group btn-group-page-header ml-auto">
                     <button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-ellipsis-h"></i>
@@ -20,31 +20,20 @@
                     </div>
                 </div>
             </div>
-  
-       <div class="container-fluid" style="background:white; ">
-        <form action="livre_Form" method="POST" >
-                {% csrf_token %}
-            
-                <div class = "form-group">
-                    {{form.categorie}}
-                </div>
-                <div>
-                    <p>ID livre:</p>{{form.id_livre}}
-                </div>
-                <div>
-                    <p>Id auteur:</p>{{form.id_auteur}}
-                </div>
-                <div>
-                    <p>Titre:</p>{{form.titre}}
-                </div>
-                <div>
-                    <p>Exemplaires:</p>{{form.exemplaire}}
-                </div>
-                <div>
-                    <p>Annee publication:</p>{{form.annee_publication}}
-                </div>
-                <button type="submit">CONFIRME</button>
-        </form>
-       </div>
+
+<div class="container-fluid">
+    <form action = "{% url 'lecteur_update' lecteur.id %}" method='POST'>
+        {%csrf_token%}
+        <div class="form-group">
+            {{lecteurForm.nom}}
+            {{lecteurForm.prenom}}
+            {{lecteurForm.Adress}}
+            {{lecteurForm.categorie}}
+            {{lecteurForm.telephone}}
+        </div>
+        <button type="submit" class= "btn btn-primary">Modifier</button>    
+    </form>    
     
-{% endblock  %}       
+</div>
+
+{% endblock  %}

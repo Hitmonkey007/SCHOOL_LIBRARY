@@ -7,69 +7,106 @@
         <meta name="description" content="">
         <meta name="viewport" content="">
         <link rel="stylesheet" href="">
+        <style>
+            
+            body{
+                display:flex;
+                background-image:url('{% static 'app/assets/img/wallpaper.jpg' %}');
+                background-repeat:no-repeat;
+                background-size:cover;
+                }
+          
+
+            .signin{ 
+                height: 500px;
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                overflow: auto;
+                border: 1px solid black;
+                align-items: center;
+                margin: auto;
+                margin-top: 200px;
+                margin-left: 450px;
+                background-color: rgba(0, 0, 0, 0.2); 
+                border-radius: 50px;
+                box-shadow: inset -5px -5px rgba(0, 0, 0, 0.2);
+             }
+            h1{
+                font-size= 2rem;
+                border-bottom: 4px solid rgba(0, 0, 0, 0.9);
+               }
+            .box{
+                padding: 5px;
+                margin:10px;
+                width: 55%;
+                border-radius: 30px;
+                background-color: rgba(0, 0, 0, 0.5); 
+                box-shadow: inset -5px -5px rgba(0, 0, 0, 0.2);
+                color: white;
+                font-size= 2rem;
+             }
+            .logo{
+                width: 30%;
+                margin-left: 120px;
+                border-radius: 30px;
+            }
+            
+            
+            button[type=submit]{
+                  padding: 10px 20px;
+                  margin-top: 50px;
+                  margin-left: 50px;
+                  background-color: rgba(0, 0, 0, 0.5);
+                  box-shadow: inset -3px -3px rgba(0, 0, 0, 0.5);
+                  color: white;
+                  border: none;
+                  outline: none;
+                  border-radius: 20px;
+                  font-size: 1rem; 
+                 }       
+            button[type=submit]:hover{
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.1)
+                color: white;
+             }
+          
+
+          ::placeholder{
+            color: white;
+            opacity: 0.9;
+          }
+        </style>
+                 
     </head>
-    <style>
-card-body{
-    width: 350px;
 
-    height: auto;
-   
-    position: absolute;
-   
-    left: 50%;
-   
-    top: 50%;
-   
-    transform: translate(-50%, -50%);
-   
-    -webkit-transform: translate(-50%, -50%);
 
-}
-
-body{
-    display: flex;
-    background-image:url("{% static 'app/assets/img/wallpaper.jpg' %}");
-
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-position:center;
-}
-    </style>
-<body>
-    <div class="d-flex flex-column w-100 justify-content-center align-items-center">
-        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 pt-3">
-            <div class="card card-default rounded-0 shadow">
-                <div class="card-header">
-                    <h4 class="card-title"><b>SignIN</b></h4>
+    <body link="white" vlink="white" alink="white">
+       
+        <div class='Signin'>
+            <form action="/signin" method="post">
+                <div>
+                    <img src="{% static 'app/assets/img/logo.jpg' %}" class="logo" id="logo" >
+                </div> 
+                {% csrf_token %}
+                <h1>SCHOOL LIBRARY</h1>
+                <div>
+                <label for="">Username</label>
+                <input type="text" id="username"  name="username" class="box" placeholder="Enter Your Username"Required>
+                </div> 
+                <br>
+                <div>
+                    <label for="">Password</label>
+                    <input type="password" id="pass1" class="box" name="pass1" placeholder="Enter Your Password"Required>
                 </div>
-                <div class="card-body">
-                    <div class="container-fluid">
-                        <form id="login-user" action="" method="POST">
-                            {% csrf_token %}
-                            <div class="mdc-layout-grid">
-                                <div class="mdc-layout-grid__inner">
-                                    <div class="form-group mb-3">
-                                        <label for="username" class="control-label">Username</label>
-                                        <input type="text" class="form-control rounded-0" autofocus name="username" id="username" required="required">
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <label for="password" class="control-label">Password</label>
-                                        <input type="password" class="form-control rounded-0" autofocus name="password" id="password" required="required">
-                                    </div>
-                                
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <div class="d-flex w-100 justify-content-center align-items-center">
-                                            <button class="btn btn-sm rounded-0 btn-primary">
-                                                Signin
-                                            </button>
-            <a href="{% url 'signup' %}" >Create an account</a>
-            
-         </form>
-       </div>
-        
-            
-    
-    </div>
+                <br>
+                
+                <button type="submit" >Signin</button>
+                
+                <a href="{% url 'signup' %}" >Create an account</a>
+            </form>
+        </div>
+         <script src="" async defer></script>
 
-</body>
+    </body>

@@ -1,17 +1,11 @@
-from django.http import HttpRequest, JsonResponse
+from django.http import HttpRequest
 from django.shortcuts import redirect, render
-from django.contrib import messages
-
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate,login,logout
-from django.http import HttpResponseRedirect
+from django.contrib.auth import authenticate,login
 
 
-from LIBRARY.models import Emprunt
-from LIBRARY.Forms import EmpruntForm
-
-
+#Views..
 def signup(request):
     if request.method == "POST":
     
@@ -31,6 +25,7 @@ def signup(request):
     return render(request, 'app/home/signup.html')
 
 
+
 def signin(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -39,18 +34,13 @@ def signin(request):
         user = authenticate(request, username=username, password=pass1)
         if user is not None:
          login(request, user)
-         fname = user.first_name
-         return render(request, 'index.html', {'fname': fname})
+         return render(request, "app/home/index.html")
          
         else:
           messages.error(request, 'Username or Password is incorrect!')
-          return redirect('index')
+          return redirect('signin')
      
      
     return render(request, "app/home/signin.html")
 
 
-def signout(request):
-   logout(request)
-   messages.success(request, 'Logged out successfully😉')
-   return redirect('index')
