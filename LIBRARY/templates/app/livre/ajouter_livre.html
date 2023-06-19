@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>AJOUT</title>
-        <style>
-            body{background: #eee;height: 100%;margin: 25px 0;padding-left: 300px;}            
-            button{border-radius: 12px;color:aqua;background-color: #04AA6D;cursor:pointer;}
-        </style>
-    </head>
-    <body>
-        <form method="POST" action="/ajout_livre">
-            {% csrf_token %}
-            <div>
-                <br>
-                <p>
-                    <h3>AJOUTER UNE LIVRE</h3>
-                </p>
-                <div>
-                    <p>Categorie:</p>{{form.categorie}}
+{% extends 'app/layouts/default.html' %}
+{% block content %}   
+
+<div class="main-panel"style="background:#c7c8ca;">
+    <div class="content">
+        <div class="page-inner">
+            <div class="page-header">
+                <h4 class="page-title">Ajouter un livre</h4>
+                <div class="btn-group btn-group-page-header ml-auto">
+                    <button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="arrow"></div>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </div>
+            </div>
+  
+       <div class="container-fluid" style="background:white; ">
+        <form action="livre_Form" method="POST" >
+                {% csrf_token %}
+            
+                <div class = "form-group">
+                    {{form.categorie}}
                 </div>
                 <div>
                     <p>ID livre:</p>{{form.id_livre}}
@@ -36,11 +43,8 @@
                 <div>
                     <p>Annee publication:</p>{{form.annee_publication}}
                 </div>
-                <div>
-                    <br>
-                    <button type="submit">CONFIRME</button>
-                </div>
-            </div>
+                <button type="submit">CONFIRME</button>
         </form>
-    </body>
-</html>
+       </div>
+    
+{% endblock  %}       
