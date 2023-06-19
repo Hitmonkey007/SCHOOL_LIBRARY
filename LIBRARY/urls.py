@@ -6,7 +6,8 @@ from LIBRARY.views import *
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('', home.index, name='home'),
+    path('', sigmup.signup, name='signup'),
+    path('home/', home.index, name='home_index'),
     path('contact', home.contact, name='contact'),
     path('ajout_lecteur/', lecteure.add, name='lecteur_add'),
     path('lecteurs/', lecteure.index, name='lecteur_index'),

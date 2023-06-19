@@ -34,7 +34,9 @@ body{
             <input type="password" id="pass1" name="pass1" placeholder="Enter Password"Required>
             </div>
             <br>
-            <button type="submit">Sign In</button>
+            <a href="{% url 'home_index' %}">
+             <button type="submit">Sign In</button>
+            </a>
             <a href="{% url 'signup' %}" >Create an account</a>
             
          </form>
