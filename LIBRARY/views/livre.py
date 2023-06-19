@@ -39,7 +39,7 @@ def affiche_livre(request):
 
 def modifier_livre(request,id):
     livres = livre.objects.get(id=id)
-    return render(request,'modifier_livre.html',{'livres':livres});
+    return render(request,'modifier_livre.html',{'livres':livres})
 
 def update(request,id):
     livres = livre.objects.get(id=id)
