@@ -57,3 +57,13 @@
                                     <th>Options</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                {% for emprunt in Emprunts %}
+                                <tr>
+                                  <td>{{ emprunt.id }}</td>
+                                  <td>{{ emprunt.Lecteur.nom }}</td>
+                                  <td>{{ emprunt.Lecteur.prenom }}</td>
+                                  <td>{{ emprunt.livre.titre }}</td>
+                                  <td>{{ emprunt.date_emprunt}}</td>
+                                  <td>{{ emprunt.Date_retour}}</td>
+                                  <td>
