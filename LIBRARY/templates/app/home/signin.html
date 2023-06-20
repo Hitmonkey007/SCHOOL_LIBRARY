@@ -101,9 +101,9 @@
                     <input type="password" id="pass1" class="box" name="pass1" placeholder="Enter Your Password"Required>
                 </div>
                 <br>
-                <a href="{% url 'home_index' %}">
+                {% comment %} <a href="{% url 'home_index' %}"> {% endcomment %}
                     <button type="submit">Sign In</button>
-                   </a>
+                   {% comment %} </a> {% endcomment %}
                    <a href="{% url 'signup' %}" >Create an account</a>
             </form>
         </div>
