@@ -27,3 +27,9 @@
                     <h1 class="page-header"> Liste des Emprunts</h1>
                 </div>
             </div>
+
+            {% if messages %}
+            {% for message in messages %}
+            <p class="alert alert-success w-100 h-100">{{message}}</p>
+            {%endfor %}
+            {% endif %}
