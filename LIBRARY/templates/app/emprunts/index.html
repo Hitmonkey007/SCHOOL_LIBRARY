@@ -1,6 +1,7 @@
 {% extends 'app/layouts/default.html' %}
 {% block content %}
 
+
 <div class="main-panel"style="background:#c7c8ca;">
     <div class="content">
         <div class="page-inner">
@@ -32,35 +33,40 @@
             <p class="alert alert-success w-100 h-100">{{message}}</p>
             {%endfor %}
             {% endif %}
-            
-            
+
             <div class="container-fluid" >
                 <a href="{% url 'emprunt_index' %}" class="btn btn-primary">Nouveau</a>
                 <br>
                 <br>
-                <div class="table-responsive" style="background:white; ">
-                    <table class="table table-bordered table-stripped">
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Nom de lecteur</th>
-                                <th>Prenom de lecteur</th>
-                                <th> Titre de livre </th>
-                                <th>Date emprunt</th>
-                                <th> Date de retour </th>
-                                <th>Options</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                          {% for emprunt in Emprunts %}
-                          <tr>
-                            <td>{{ emprunt.id }}</td>
-                            <td>{{ emprunt.Lecteur.nom }}</td>
-                            <td>{{ emprunt.Lecteur.prenom }}</td>
-                            <td>{{ emprunt.livre.titre }}</td>
-                            <td>{{ emprunt.date_emprunt}}</td>
-                            <td>{{ emprunt.Date_retour}}</td>
-                            <td>
+
+                <div class="container-fluid" >
+                    <a href="{% url 'emprunt_index' %}" class="btn btn-primary">Nouveau</a>
+                    <br>
+                    <br>
+
+                    <div class="table-responsive" style="background:white; ">
+                        <table class="table table-bordered table-stripped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nom de lecteur</th>
+                                    <th>Prenom de lecteur</th>
+                                    <th> Titre de livre </th>
+                                    <th>Date emprunt</th>
+                                    <th> Date de retour </th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for emprunt in Emprunts %}
+                                <tr>
+                                  <td>{{ emprunt.id }}</td>
+                                  <td>{{ emprunt.Lecteur.nom }}</td>
+                                  <td>{{ emprunt.Lecteur.prenom }}</td>
+                                  <td>{{ emprunt.livre.titre }}</td>
+                                  <td>{{ emprunt.date_emprunt}}</td>
+                                  <td>{{ emprunt.Date_retour}}</td>
+                                  <td>
                                     <div class="card-footer">
                                         <a href="" class="btn btn-primary">Update</a>
                                         <form action="#" method="post">
@@ -91,3 +97,4 @@
 
 
 {% endblock  %}
+
