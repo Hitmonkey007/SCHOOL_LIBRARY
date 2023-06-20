@@ -1,4 +1,5 @@
 from django.http import HttpRequest, JsonResponse
+from django.shortcuts import redirect, render
 def index(request):
     assert isinstance(request, HttpRequest)
     emprunts = Emprunt.objects.all()
