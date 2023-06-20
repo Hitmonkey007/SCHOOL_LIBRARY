@@ -1,3 +1,4 @@
+from django.http import HttpRequest, JsonResponse
 def index(request):
     assert isinstance(request, HttpRequest)
     emprunts = Emprunt.objects.all()
