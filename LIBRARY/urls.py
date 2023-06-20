@@ -21,6 +21,8 @@ urlpatterns = [
     path('emprunts/ajout_emprunt',emprunts.ajout_emprunt, name='emprunts_ajout'),
     path('livre/ajouter_livre',livre.ajouter_livre, name='livre_ajout') ,
 
+    path('emprunts/', emprunts.index, name='emprunt_index'),
+
     
 
 ]
