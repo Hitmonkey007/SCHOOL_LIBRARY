@@ -1,6 +1,8 @@
 from django.http import HttpRequest, JsonResponse
 from django.shortcuts import redirect, render
 from django.contrib import messages
+from LIBRARY.models import Emprunt
+from LIBRARY.Forms import EmpruntForm
 def index(request):
     assert isinstance(request, HttpRequest)
     emprunts = Emprunt.objects.all()
