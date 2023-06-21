@@ -4,12 +4,9 @@ from django.contrib import messages
 
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate,login
 from django.http import HttpResponseRedirect
 
-
-from LIBRARY.models import Emprunt
-from LIBRARY.Forms import EmpruntForm
 
 
 def signup(request):
@@ -39,19 +36,10 @@ def signin(request):
         user = authenticate(request, username=username, password=pass1)
         if user is not None:
          login(request, user)
-         fname = user.first_name
-         return render(request, 'app/home/index.html' )
+        
+        return render(request, 'app/home/index.html' )
      
          
-        else:
-          messages.error(request, 'Username or Password is incorrect!')
-          return redirect('home_index')
-     
-     
     return render(request, "app/home/signin.html")
 
 
-def signout(request):
-   logout(request)
-   messages.success(request, 'Logged out successfully😉')
-   return redirect('index')
