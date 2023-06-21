@@ -8,17 +8,6 @@ from LIBRARY.Forms import *
 
 
 
-def index(request):
-    livres = Livre.objects.all()
-    return render(
-        request,
-        'app/livres/index.html',
-        {
-            'livres': livres
-        }
-    )
-
-
 
 
 def add(request):
@@ -31,7 +20,7 @@ def add(request):
         }
     )
       
-def store(request):
+def livres_Form(request):
     assert isinstance(request, HttpRequest)
     if request.method == 'POST':
         form = LivreForm(request.POST)
@@ -40,3 +29,13 @@ def store(request):
             messages.success(request, "Le Livre est enregistré Avec Succès !")
     #retour a la page
     return redirect('/livres')
+
+def index(request):
+     livreForm = livre.objects.all()
+     return render(
+        request,
+        'app/livres/index.html',
+        {
+            'livreForm': livreForm
+        }
+    )
