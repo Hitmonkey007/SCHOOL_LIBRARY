@@ -19,11 +19,18 @@ urlpatterns = [
     path('emprunts/index', emprunts.index, name='emprunt_index'),
     path('emprunts/ajout_emprunt',emprunts.ajout_emprunt, name='emprunts_ajout'),
     path('emprunts/ajout_emprunt',emprunts.ajout_emprunt, name='emprunts_ajout'),
-    path('livres/ajouter_livre',livres.ajouter_livre, name='livre_ajout') ,
+
+   
 
     path('emprunts/', emprunts.index, name='emprunt_index'),
     path('emprunts/index', emprunts.index, name='emprunt_index'),
     path('emprunts/ajout_emprunt',emprunts.ajout_emprunt, name='emprunts_ajout'),
+
+
+    
+    path('livres/',livres.index, name='livres_index' ), 
+    path('livres/add', livres.add, name='livres_add'),  
+    path('livres/store', livres.store, name='livres_store'),
 
 
     
