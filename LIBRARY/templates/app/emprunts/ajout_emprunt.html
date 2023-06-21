@@ -34,7 +34,7 @@
                     <div class="form-group">
                         {% comment %} {{ form.Lecteur|as_crispy_field }} {% endcomment %}
                         <div class="form-group">
-                            <label for="lecteur">Select lecteur</label>
+                            <label for="lecteur">Selectionn lecteur</label>
                             <select name="lecteur" id="Lecteur_id" class="form-control">
                                 <option value="">---------</option>
                                 {% for lecteur in home %}
@@ -44,9 +44,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="Lecteur">Select lecteur</label>
+                            <label for="Lecteur">Selectionner Lecteur</label>
                             <select name="Lecteur" id="Lecteur_id" class="form-control">
-                                <option value="">---------</option>
+                                <option value="{{Lecteur_id}}">---------</option>
                                 
                             </select>
                         </div>
