@@ -68,10 +68,23 @@
                     </a>
                     
                 </li>
-          
-                <li>
-                    <a href="{% url 'emprunt_index' %}">Emprunts</a>
+                <li class="nav-item">
+                    <a href="{% url 'emprunt_index' %}">
+                        {% comment %} <i class="fa fa-shopping-cart"></i> {% endcomment %}
+                    {% comment %} <a href="{% url 'empruts_index' %}">{% endcomment %}
+                        {% comment %} <a > {% endcomment %}
+                        {% comment %} <i class="fa fa-shopping-cart"></i> {% endcomment %}
+                        {% comment %} <div class="avatar-sm float-left mr-2"> {% endcomment %}
+                            <i>
+                            <img src="{% static 'app/assets/img/emprunts.ico' %}" alt="..." class="avatar-img rounded-circle">
+                            </i>
+                        {% comment %} </div> {% endcomment %}
+                        <p>Emprunts</p>
+                    </a>
+                    
                 </li>
+          
+               
 
                 <li class="nav-item">
                     {% comment %}  <a  href="{% url 'Lecteurs_index' %}">{% endcomment %}
@@ -124,18 +137,16 @@
                     </a>
                     <div class="collapse" id="tables">
                         <ul class="nav nav-collapse">
-                            <li>
-                               {% comment %} <a href="{% url 'products_indexe' %}">{% endcomment %}
+                            <li>                              
                                 <a href="{% url 'livres_add' %}">
                                     <span class="sub-item">Ajout des livres</span>
                                 </a>
                             </li>
+
                             <li>
-                                {% comment %}<a href="{% url 'categories_index' %}">{% endcomment %}
-                                <a>
-                                    <span class="sub-item">Tous les livres</span>
-                                </a>
+                              <a href="{% url 'livres_index' %}"><span class="sub-item">Tous les livres</span></a>
                             </li>
+
                         </ul>
                     </div>
                 </li>
