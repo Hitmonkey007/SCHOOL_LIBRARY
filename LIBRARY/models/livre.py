@@ -13,9 +13,7 @@ class livre(models.Model):
 
     id_livre = models.CharField(max_length=30)
     id_auteur = models.CharField(max_length=30)
-    titre = models.CharField(max_length=100) 
-    exemplaire = models.IntegerField()  
-    annee_publication = models.DateField()      
+    titre = models.CharField(max_length=100)       
     categorie = models.CharField(max_length=100,choices=catchchoice,default='histoire')
     
 
