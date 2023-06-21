@@ -34,13 +34,10 @@
             {%endfor %}
             {% endif %}
 
-            <div class="container-fluid" >
-                <a href="{% url 'emprunt_index' %}" class="btn btn-primary">Nouveau</a>
-                <br>
-                <br>
+          
 
                 <div class="container-fluid" >
-                    <a href="{% url 'emprunt_index' %}" class="btn btn-primary">Nouveau</a>
+                    <a href="{% url 'emprunts_ajout' %}" class="btn btn-primary">Nouveau</a>
                     <br>
                     <br>
 
@@ -61,7 +58,7 @@
                                 {% for emprunt in Emprunts %}
                                 <tr>
                                   <td>{{ emprunt.id }}</td>
-                                  <td>{{ emprunt.Lecteur.nom }}</td>
+                                  <td>{{ emprunt.Lecteu }}</td>
                                   <td>{{ emprunt.Lecteur.prenom }}</td>
                                   <td>{{ emprunt.livre.titre }}</td>
                                   <td>{{ emprunt.date_emprunt}}</td>
