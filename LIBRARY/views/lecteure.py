@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect
 from django.http import HttpRequest
 from django.contrib import messages
-from LIBRARY.models import Lecteur
-from LIBRARY.Forms import LecteurForm, lecteur_form
+from LIBRARY.models import *
+from LIBRARY.Forms import *
 
 def add(request):
 
@@ -12,7 +12,7 @@ def add(request):
        if lecteurForm.is_valid():
           post = lecteurForm.save()
           messages.success(request, "Le lecteur a ete enregistre avec succes")
-          return redirect('home')
+          return redirect('/lecteurs')
        else:
       
           return render(request, 'app/lecteurs/add.html', {'lecteurForm': lecteurForm})
