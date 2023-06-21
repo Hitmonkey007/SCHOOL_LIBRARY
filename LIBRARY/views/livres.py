@@ -2,8 +2,8 @@
 from django.shortcuts import render,redirect
 from django.http import HttpRequest
 from django.contrib import messages
-from LIBRARY.models import livre
-from LIBRARY.Forms import LivreForm, livre_form
+from LIBRARY.models import *
+from LIBRARY.Forms import *
 
 
 def ajouter_livre(request):
@@ -13,12 +13,12 @@ def ajouter_livre(request):
             user = form.save()
             return redirect('home') 
         else :
-            return render(request, 'app/livre/ajouter_livre.html', {'form': form}) 
+            return render(request, 'app/livres/ajouter_livre.html', {'form': form}) 
         
     elif request.method == "GET": 
         form = LivreForm()
         context = {'form': form }
-        return render(request, 'app/livre/ajouter_livre.html', context)
+        return render(request, 'app/livres/ajouter_livre.html', context)
         
               
         
@@ -53,3 +53,15 @@ def supprimer_livre(request,id):
     livres = livre.objects.get(id=id)
     livres.delete()
     return redirect("/afficher_livre")
+
+
+def index(request):
+     livreForm = Livre.objects.all()
+     return render(
+        request,
+        'app/livres/index.html',
+        {
+            'livreForm': livreForm
+        }
+    )
+
