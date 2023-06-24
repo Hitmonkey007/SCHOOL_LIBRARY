@@ -1,0 +1,92 @@
+{% extends 'app/layouts/default.html' %}
+{% block content %}
+
+<div class="main-panel"style="background:#c7c8ca;">
+    <div class="content">
+        <div class="page-inner">
+            <div class="page-header">
+                <h4 class="page-title">Livres</h4>
+                <div class="btn-group btn-group-page-header ml-auto">
+                    <button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="arrow"></div>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header"> Liste des livres</h1>
+                </div>
+            </div>            
+            {% if messages %}
+            {% for message in messages %}
+            <p class="alert alert-success w-100 h-100">{{message}}</p>
+            {%endfor %}
+            {% endif %}
+
+
+            {% if livreForm %}
+            <div class="container-fluid" >
+                <a href="{% url 'livres_add' %}" class="btn btn-primary">Nouveau</a>
+                <br>
+                <br>
+                <div class="table-responsive" style="background:white; ">
+                    <table class="table table-bordered table-stripped">
+                        <thead>
+                            <tr>
+                    <th>Categorie</th>
+                    <th>ID livre</th>
+                    <th>Id auteur</th>
+                    <th>Titre</th>
+                    <th>Exemplaires</th>
+                    <th>Annee publication</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for livre in livres %}
+                <tr>
+                    <td>{{livre.categorie}}</td>
+                    <td>{{livre.id_livre}}</td>
+                    <td>{{livre.id_auteur}}</td>
+                    <td>{{livre.titre}}</td>
+                    <td>{{livre.exemplaire}}</td>
+                    <td>{{livrviewse.annee_publication}}</td>
+                    <td>
+                        <div class="card-footer">
+                            <form action="{% url 'livre_delete' livre.id %}" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" onclick="return confirm('etes vous pret a supprimer le livre')"
+                                    class="btn btn-danger btn-sm">supprimer</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}  
+
+
+
+
+
+</div>
+</div>
+
+</div>
+
+
+
+{% endblock  %}
