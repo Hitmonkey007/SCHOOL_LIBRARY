@@ -6,19 +6,16 @@ from LIBRARY.Forms import *
 
 
 def add(request):
-
-  if request.method == "POST":
+    if request.method == "POST":
       livreForm =LivreForm(request.POST)
-
       if livreForm.is_valid():
           post =livreForm.save()
           messages.success(request, "Lelivre a ete enregistre avec succes")
-          return redirect('/home')
+          return redirect('/livres')
       else:
-      
           return render(request, 'app/livres/add.html', {'livreForm':livreForm})
 
-  elif request.method == "GET":
+    elif request.method == "GET":
       livreForm =LivreForm()
       context = {'livreForm':livreForm}
       return render(request, 'app/livres/add.html', context)

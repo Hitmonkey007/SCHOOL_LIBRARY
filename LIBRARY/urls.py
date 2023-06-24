@@ -24,7 +24,7 @@ urlpatterns = [
 
 
     
-    path('livres/',livres.index, name='livres_index' ), 
+    path('livres/index',livres.index, name='livres_index' ), 
     path('livres/add', livres.add, name='livres_add'),  
    
 
