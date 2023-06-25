@@ -1,5 +1,58 @@
 {% extends 'app/layouts/default.html' %}
-{% block content %}   
+{% block content %} 
+
+<!-- <div class="main-panel"style="background:#c7c8ca;">
+    <div class="content">
+        <div class="page-inner">
+            <div class="page-header">
+                <h4 class="page-title">Ajouter un lecteur</h4>
+                <div class="btn-group btn-group-page-header ml-auto">
+                    <button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="arrow"></div>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </div>
+            </div>
+  
+  
+            <div class="container-fluid" style="background:white; ">
+              <form class="lecteur_Form" method="POST">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <label for="nom">Saisir le nom </label>
+                      {{ lecteurForm.nom}}
+                      
+                  </div>  
+                  <div class="form-group">
+                    <label for="prenom">Saisir le prenom </label>
+                        {{ lecteurForm.prenom}}
+                  </div>  
+                  <div class="form-group">
+                    <label for="Adresse">Saisir l'Adresse </label>
+                    {{ lecteurForm.Adresse}}
+                  </div>  
+                  <div class="form-group">
+                    <label for="categorie">Homme ou femme </label>
+                    {{ lecteurForm.categorie}}
+                  </div>
+                  <div class="form-group">
+                    <label for="telephone">Saisir le numero </label>
+                    {{ lecteurForm.telephone}}
+                  </div> 
+                  <button type="submit" class="btn btn-success btn-lg" style="border-radius: 0%;">Ajouter</button>
+              </form>   
+                  </div>
+                         
+              
+          <div class="text-center">Voir les lecteurs<a href="{% url 'lecteur_index' %}">Cliquer ici</a></div>
+      </div>-->
 
 <div class="main-panel"style="background:#c7c8ca;">
     <div class="content">
@@ -22,29 +75,56 @@
             </div>
   
        <div class="container-fluid" style="background:white; ">
-        <form action="livres_Form" method="POST" >
+        <form action="livres_Form" method="POST" > 
+            
                 {% csrf_token %}
             
-                <div class = "form-group">
-                    {{form.categorie}}
+                <!-- <div class = "form-group"> 
+                    {{livreForm.categorie}}
+                </div>-->
+                <div class="form-group">
+                    <label for="nom">Saisir lecategorie </label>
+                    {{livreForm.categorie}}
+                      
+                  </div> 
+                  <div class="form-group">
+                    <label for="ID Livre">Saisir le livre </label>
+                    {{livreForm.id_livre}}  
+                  </div> 
+
+                  <div class="form-group">
+                    <label for="Id auteur">Saisir l'auteur </label>
+                    {{livreForm.id_auteur}}  
+                  </div> 
+                  <div class="form-group">
+                    <label for="titre">Saisir le titre </label>
+                    {{livreForm.titre}}
+                  </div>
+                  <div class="form-group">
+                    <label for="exemplaires">Saisir l'exemplaire </label>
+                    {{livreForm.exemplaire}}
+                  </div>  
+
+
+                <!-- <div> 
+                    <p>ID livre:</p>{{livreForm.id_livre}}
+                </div>-->
+                <!-- <div> 
+                    <p>Id auteur:</p>{{livreForm.id_auteur}}
+                </div>-->
+                <!--<div>
+                    <p>Titre:</p>{{livreForm.titre}}
+                </div>-->
+                <!-- <div> 
+                    <p>Exemplaires:</p>{{livreForm.exemplaire}}
                 </div>
-                <div>
-                    <p>ID livre:</p>{{form.id_livre}}
+                 <div> 
+                    <p>Annee publication:</p>{{livreForm.annee_publication}}
                 </div>
-                <div>
-                    <p>Id auteur:</p>{{form.id_auteur}}
-                </div>
-                <div>
-                    <p>Titre:</p>{{form.titre}}
-                </div>
-                <div>
-                    <p>Exemplaires:</p>{{form.exemplaire}}
-                </div>
-                <div>
-                    <p>Annee publication:</p>{{form.annee_publication}}
-                </div>
-                <button type="submit">CONFIRME</button>
+                <button type="submit">CONFIRME</button>-->
+                <button type="submit" class="btn btn-success btn-lg" style="border-radius: 0%;">Ajouter</button> 
         </form>
-       </div>
+        <div class="text-center">Voir les livres<a href="{% url 'livres_add' %}">Cliquer ici</a></div>
+       </div> 
     
 {% endblock  %}       

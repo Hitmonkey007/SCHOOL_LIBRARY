@@ -6,8 +6,8 @@ from LIBRARY.views import *
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    # path('', sigmup.signup, name='signup'),
-    path('signup/', register.signin, name='signin'),
+    path('', register.signup, name='signup'),
+    path('signin', register.signin, name='signin'),
     path('home/', home.index, name='home'),
     path('contact', home.contact, name='contact'),
     path('ajout_lecteur/', lecteure.add, name='lecteur_add'),
@@ -24,7 +24,7 @@ urlpatterns = [
 
 
     
-    path('livres/',livres.index, name='livres_index' ), 
+    path('livres/index',livres.index, name='livres_index' ), 
     path('livres/add', livres.add, name='livres_add'),  
    
 
