@@ -45,9 +45,8 @@
                         <table class="table table-bordered table-stripped">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Nom de lecteur</th>
-                                    <th>Prenom de lecteur</th>
+                                    <th>#</th>
+                                    <th>Lecteur</th>
                                     <th> Titre de livre </th>
                                     <th>Date emprunt</th>
                                     <th> Date de retour </th>
@@ -55,12 +54,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for emprunt in Emprunts %}
+                                {% for emprunt in empruntForm %}
                                 <tr>
                                   <td>{{ emprunt.id }}</td>
-                                  <td>{{ emprunt.Lecteu }}</td>
-                                  <td>{{ emprunt.Lecteur.prenom }}</td>
-                                  <td>{{ emprunt.livre.titre }}</td>
+                                  <td>{{ emprunt.Lecteur }}</td>
+                                  <td>{{ emprunt.titre }}</td>
                                   <td>{{ emprunt.date_emprunt}}</td>
                                   <td>{{ emprunt.Date_retour}}</td>
                                   <td>

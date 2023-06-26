@@ -21,6 +21,11 @@ def add(request):
          livreForm =LivreForm()
          context = {'livreForm':livreForm}
          return render(request, 'app/livres/add.html', context)
+     
+def delete(request,id):
+    livre = livre.objects.get(pk=id)
+    livre.delete()
+    return redirect('/lecteurs/')
   
 def index(request):
      livreForm = livre.objects.all()
@@ -32,10 +37,5 @@ def index(request):
         }
     )   
      
-
-def delete(request, id):
-    livre= livre.objects.get(pk=id)
-    livre.delete()
-    return redirect('/livres/')
 
    
