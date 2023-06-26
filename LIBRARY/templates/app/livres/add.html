@@ -37,9 +37,10 @@
           <div>
             <p>Titre:</p>{{livreForm.titre}}
           </div>
-          <button type="submit" style="border-radius: 0%;">Ajouter</button> 
+          <div class="text-center"><a href="{% url 'livres_index' %}" class="btn btn-success btn-lg" style="border-radius: 0%;">Ajouter</a></div>
+          <!-- <button href="{% url 'livres_index' %}" type="submit" class="btn btn-success btn-lg" style="border-radius: 0%;">Ajouter</button>  -->
         </form>
-        <!-- <div class="text-center">Voir les livres<a href="{% url 'livres_add' %}">Cliquer ici</a></div> -->
+        <div class="text-center">Voir les livres<a href="{% url 'livres_index' %}">Cliquer ici</a></div>
        </div> 
     
 {% endblock  %}       

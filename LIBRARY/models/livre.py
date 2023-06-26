@@ -15,7 +15,8 @@ class livre(models.Model):
     id_auteur = models.CharField(max_length=30)
     titre = models.CharField(max_length=100)       
     categorie = models.CharField(max_length=100,choices=catchchoice,default='histoire')
-    #annee_publication = models.CharField(max_length=50)
+    # exemplaire = models.IntegerField(max_length=32)
+    # annee_publication = models.CharField(max_length=50)
     
 
     

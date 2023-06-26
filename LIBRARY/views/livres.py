@@ -11,7 +11,8 @@ def add(request):
          if livreForm.is_valid():
               post =livreForm.save()
               messages.success(request, "Le livre a ete enregistre avec succes")
-              return redirect('/add')
+              return redirect('/livres')
+            #   return redirect('app/livres/index.html')
          else:
               return render(request, 'app/livres/add.html', {'livreForm':livreForm})
 
@@ -33,8 +34,8 @@ def index(request):
      
 
 def delete(request, id):
-    lecteur= Lecteur.objects.get(pk=id)
-    lecteur.delete()
+    livre= livre.objects.get(pk=id)
+    livre.delete()
     return redirect('/livres/')
 
    

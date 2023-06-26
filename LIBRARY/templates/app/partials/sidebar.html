@@ -139,12 +139,14 @@
                         <ul class="nav nav-collapse">
                             <li>                              
                                 <a href="{% url 'livres_add' %}">
+                                    {% comment %} <a > {% endcomment %}
                                     <span class="sub-item">Ajout des livres</span>
                                 </a>
                             </li>
-
                             <li>
-                              <a href="{% url 'livres_index' %}"><span class="sub-item">Tous les livres</span></a>
+                              <a href="{% url 'livres_index' %}">
+                                {% comment %} <a > {% endcomment %}
+                                <span class="sub-item">Tous les livres</span></a>
                             </li>
 
                         </ul>
