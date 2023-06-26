@@ -1,0 +1,63 @@
+{% extends 'app/layouts/default.html' %}
+{% block content %} 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>LISTE LIVRES</title>
+        <style>
+            body{background: #eee;height: 100%;margin: 25px 0;padding-left: 300px;}
+            table{border: 1px solid black; border-radius:10px }
+            
+            th,td{border: 1px solid black; border-radius:10px;padding:10px}
+            td{font-family:impact}
+            
+            tr:hover{background-color:aqua;}
+            
+            th{background-color: #04AA6D; color: white;}
+            
+            button,a{border-radius:12px; text-decoration: none; 
+                color:white; background-color: #04AA6D; cursor: pointer;}
+            td.bt button a:hover{color: black;font-family:impact}
+
+            button.hv a:hover{color:black;font-family:impact}
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categorie</th>
+                    <th>ID livre</th>
+                    <th>Id auteur</th>
+                    <th>Titre</th>
+                    <th>Exemplaires</th>
+                    <th>Annee publication</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for livre in livres %}
+                <tr>
+                    <td>{{livre.categorie}}</td>
+                    <td>{{livre.id_livre}}</td>
+                    <td>{{livre.id_auteur}}</td>
+                    <td>{{livre.titre}}</td>
+                    <td>{{livre.exemplaire}}</td>
+                    <td>{{livre.annee_publication}}</td>
+                    <td class="bt">
+                        <button><a href="/modifier/{{livre.id}}">Modifier</a></button>
+                        <button><a href="/supprimer/{{livre.id}}">Supprimer</a></button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <button class="hv"><a href="/ajouter">NOUVEAU LIVRE</a></button>
+    </body>
+</html>
+{% endblock  %} 

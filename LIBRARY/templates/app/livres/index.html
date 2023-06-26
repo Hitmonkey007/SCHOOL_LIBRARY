@@ -42,28 +42,29 @@
                 <br>
                 <br>
                 <div class="table-responsive" style="background:white; ">
-        <table class="table table-bordered table-stripped">
-            <thead>
-                <tr>
-                    <th>Categorie</th>
-                    <th>ID livre</th>
-                    <th>Id auteur</th>
-                    <th>Titre</th>
-                    <th>Exemplaires</th>
-                    <th>Annee publication</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for livre in livres %}
-                <tr>
-                    <td>{{livre.categorie}}</td>
-                    <td>{{livre.id_livre}}</td>
-                    <td>{{livre.id_auteur}}</td>
-                    <td>{{livre.titre}}</td>
-                    <td>{{livre.exemplaire}}</td>
-                    <td>{{livrviewse.annee_publication}}</td>
-                    <td>
+
+                       <table class="table table-bordered table-stripped">
+                        <thead>
+                          <tr>
+                            <th>Categorie</th>
+                            <th>ID livre</th>
+                            <th>Id auteur</th>
+                            <th>Titre</th>
+                            <th>Exemplaires</th>
+                            <th>Annee publication</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         {% for livre in livreForm %}
+                           <tr>
+                            <td>{{livre.categorie}}</td>
+                            <td>{{livre.id_livre}}</td>
+                            <td>{{livre.id_auteur}}</td>
+                            <td>{{livre.titre}}</td>
+                            <td>{{livre.exemplaire}}</td>
+                            <td>{{livrviewse.annee_publication}}</td>
+                            <td>
                         <div class="card-footer">
                             <form action="{% url 'livre_delete' livre.id %}" method="POST">
                                 {% csrf_token %}
@@ -80,11 +81,6 @@
     </div>
 </div>
 {% endif %}  
-
-
-
-
-
 </div>
 </div>
 

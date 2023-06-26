@@ -21,7 +21,7 @@ def add(request):
         if empruntForm.is_valid():
             post = empruntForm.save()
             messages.success(request,"Le livre a ete bien enregistre avec succes")
-            return redirect('home')
+            return redirect('/emprunts')
         else:
             return render (request,'app/emprunts/add.html',{'empruntForm':empruntForm})    
     elif request.method =="GET" :
