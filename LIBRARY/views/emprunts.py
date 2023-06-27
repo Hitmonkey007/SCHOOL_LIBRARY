@@ -15,19 +15,38 @@ def index(request):
     )
 
 
+# def add(request):
+    # if request.method =="POST":
+        # empruntForm = EmpruntForm(request.POST)
+        # if empruntForm.is_valid():
+            # post = empruntForm.save()
+            # messages.success(request,"Le livre a ete bien enregistre avec succes")
+            # return redirect('/emprunts')
+        # else:
+            # return render (request,'app/emprunts/add.html',{'empruntForm':empruntForm})    
+    # elif request.method =="GET" :
+        # empruntForm = EmpruntForm()
+        # context = {'emprentForm':empruntForm}
+        # return render (request, 'app/emprunts/add.html',context)
+    
+    
 def add(request):
-    if request.method =="POST":
-        empruntForm = EmpruntForm(request.POST)
-        if empruntForm.is_valid():
-            post = empruntForm.save()
-            messages.success(request,"Le livre a ete bien enregistre avec succes")
-            return redirect('home')
-        else:
-            return render (request,'app/emprunts/add.html',{'empruntForm':empruntForm})    
-    elif request.method =="GET" :
-        empruntForm = EmpruntForm()
-        context = {'emprentForm':empruntForm}
-        return render (request, 'app/emprunts/add.html',context)
+     if request.method == "POST":
+         empruntForm =EmpruntForm(request.POST)
+         if empruntForm.is_valid():
+              post =empruntForm.save()
+              messages.success(request, "L'emprunt a ete enregistre avec succes")
+              return redirect('/emprunts')
+            #   return redirect('app/livres/index.html')
+         else:
+              return render(request, 'app/emprunts/add.html', {'empruntForm':empruntForm})
+
+     elif request.method == "GET":
+        
+         empruntForm =EmpruntForm()
+         context = {'empruntForm':empruntForm}
+         return render(request, 'app/emprunts/add.html', context)
+
 
     
   

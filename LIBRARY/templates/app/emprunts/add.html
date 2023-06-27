@@ -23,16 +23,16 @@
             </div>
 
 
-            <div class="container-fluid" style="background:rgb(126, 125, 125); ">
+            <div class="container-fluid" style="background:white ">
                 <form class="emprunt_Form" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                      <label for="nom">Lecteur </label>
+                      <label for="Lecteur">Lecteur </label>
                         {{empruntForm.Lecteur}}
                         
                     </div>  
                     <div class="form-group">
-                      <label for="titre">Livre </label>
+                      <label for="livre">Livre </label>
                           {{empruntForm.livre}}
                     </div>  
                     <div class="form-group">
@@ -43,10 +43,12 @@
                       <label for="Date_retour">Date de retour </label>
                       {{empruntForm.Date_retour}}
                     </div>
+                    <!-- <div class="text-center"><a href="{% url 'emprunt_index' %}" class="btn btn-success btn-lg" style="border-radius: 0%;">Ajouter emprunt</a></div> -->
+          <!-- <button href="{% url 'livres_index' %}" type="submit" class="btn btn-success btn-lg" style="border-radius: 0%;">Ajouter</button>  -->
                   
                     <button type="submit" class="btn btn-success btn-lg" style="border-radius: 0%;">Ajouter</button>
                 </form>   
-                    </div>
+            </div>
                            
           
         </div>

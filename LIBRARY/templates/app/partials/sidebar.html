@@ -69,9 +69,9 @@
                     
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'emprunts_index' %}">
+                    <a href="{% url 'emprunts_add' %}">
                         {% comment %} <i class="fa fa-shopping-cart"></i> {% endcomment %}
-                    {% comment %} <a href="{% url 'empruts_index' %}">{% endcomment %}
+                    {% comment %} <a href="{% url 'emprunts_index' %}">{% endcomment %}
                         {% comment %} <a > {% endcomment %}
                         {% comment %} <i class="fa fa-shopping-cart"></i> {% endcomment %}
                         {% comment %} <div class="avatar-sm float-left mr-2"> {% endcomment %}
@@ -139,12 +139,14 @@
                         <ul class="nav nav-collapse">
                             <li>                              
                                 <a href="{% url 'livres_add' %}">
+                                    {% comment %} <a > {% endcomment %}
                                     <span class="sub-item">Ajout des livres</span>
                                 </a>
                             </li>
-
                             <li>
-                              <a href="{% url 'livres_index' %}"><span class="sub-item">Tous les livres</span></a>
+                              <a href="{% url 'livres_index' %}">
+                                {% comment %} <a > {% endcomment %}
+                                <span class="sub-item">Tous les livres</span></a>
                             </li>
 
                         </ul>
